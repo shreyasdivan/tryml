@@ -1,0 +1,54 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-3 ">
+    <a href="/web/display/" class="btn btn-outline-info" role="button">Change file or View Tutorial</a>
+  </div>
+</div>
+<br></br>
+<h4 class='text-success'> Classifier Scores: </h4>
+<table class="table table-bordered text-center">
+  {% if list %}
+    <thead class="text-success">
+      <tr>
+        <th> Classifier </th>
+        <th> Performance </th>
+      </tr>
+    </thead>
+  {% endif %}
+  <tbody>
+    {% for items in list %}
+    <tr>
+      <td> {{items.0}} </td>
+      <td> {{items.1}} </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h4 class='text-success'> Correlation matrix: </h4>
+
+<table class="table table-bordered text-center">
+  <thead>
+    <tr>
+      <th> </th>
+      {% for col in corr_columns %}
+      <th class="text-success"><small> {{col}} </small></th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for col,items in comb_list %}
+    <tr>
+      <th class="text-success"><small>{{col}}</small></th>
+      {% for item in items %}
+      <td> {{item}} </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

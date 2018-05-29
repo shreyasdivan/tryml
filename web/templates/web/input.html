@@ -1,0 +1,38 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<form class="form" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="jumbotron">
+    {{form}}
+    <button type="submit" class="btn btn-info" style="margin:10px">Submit</button>
+  </div>
+</form>
+
+<hr></hr>
+
+<div class="row">
+  <div class="col-sm-12">
+    <p class="lead text-success"> Instructions:</p>
+    <div class="row">
+      <div class="col-sm-8">
+        <dl>
+          <dt> Nomenclature</dt>
+          <dd> Please ensure that the class/target column is named as 'Target' in the csv file. This is how TryML can figure out which column to separate out the output as 'y' and keep the remaining as input 'X'</dd>
+          <dt> Data Type</dt>
+          <dd> TryML will work best if all the data is in 'int' or 'float'. Please do not keep any String data in the .csv file.</dd>
+          <dt> Size</dd>
+          <dd> Please keep the size of the .csv file below 10MB</dd>
+        </dl>
+      </div>
+      <div class="col-sm-4">
+
+        <img src="{% static 'web/img/target.jpg' %}" alt="Image could not be loaded"></img>
+      </div>
+  </div>
+  </div>
+</div>
+
+{% endblock %}

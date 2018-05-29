@@ -1,0 +1,36 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <h4 class=" lead text-info">About TryML</h4>
+      <dl>
+        <dt> View classifier performance</dt>
+        <dd> Run dataset through various machine learning classifiers provided by scikit-learn and analyse </dd>
+        <dt> View co-relation matrix</dt>
+        <dd> View the attribute behaviour via the co-relation matrix table and gauge and analyse linear relationships if any</dd>
+        <dt> Introduce Beginners</dt>
+        <dd> Being a beginner myself, it can be fascinating/encouraging to view the outcome of passing the dataset through basic implementations of scikit-learn, without having to code! </dd>
+      </dl>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <h4 class="lead text-info"> Workflow</h4>
+    <dl>
+      <dt> Preprocessing</dt>
+      <dd> After the user provides the training data (.csv file), TryML does a bit of basic preprocessing. It <a href="http://www.scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Imputer.html">imputes</a> any missing values and performs the <a href="http://www.scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">StandardScaler</a> transformation.</dd>
+      <dt> Co-relation matrix</dt>
+      <dd> Using Pandas' <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.corr.html">'corr'</a> function, the <a href="https://www.datascience.com/blog/introduction-to-correlation-learn-data-science-tutorials">co-relation matrix</a> is obtained. In practice, developers use <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">heatmaps</a> to for better visualization. </dd>
+      <dd> Classfier Analysis</dt>
+      <dd> TryML then trains the various <a href="">scikit-learn classifiers</a> with the training data. It then calculates the score for each classifier using <a href="http://scikit-learn.org/stable/modules/cross_validation.html"> scikit-learn's cross validation</a>. </dd>
+    </dl>
+  </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+      <h4 class="lead text-danger"> Please note</h4>
+      <p class="text-secondary"> TryML will be functional only for supervised classification datasets. TryML runs the default implementations for the classifiers and preprocessing of input data provided by the scikit-learn library. The is just a basic utility to play around. The user therefore must not use this application for actual production.</p>
+    </div>
+</div>
+{% endblock %}
