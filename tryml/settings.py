@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['tryml-heroku-20.herokuapp.com','tryml.herokuapp.com']
 
-
+SITE_URL = 'https://tryml-heroku-20.herokuapp.com/'
 # Application definition
 
 INSTALLED_APPS = [
