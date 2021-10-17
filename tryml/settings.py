@@ -30,7 +30,7 @@ SECRET_KEY = 'w&%q74nypoxd09q)#%+rt-ywhy&3=&kt%7y^4!=4)qg&4z5ia1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tryml-heroku-20.herokuapp.com','tryml.herokuapp.com']
 
 
 # Application definition
